@@ -1,0 +1,285 @@
+\documentclass[10.5pt]{report}
+% Used Packages
+
+
+\usepackage{xeCJK} % Chinese Language Settings
+\usepackage{fontspec}
+\setCJKmainfont{Source Han Serif SC}
+\setmainfont{Minion Pro}
+
+\usepackage{indentfirst}  % indent of Chinese
+\setlength{\parindent}{2em}
+
+\usepackage{lmodern} %Math Settings
+\usepackage{amssymb,amsmath}
+\usepackage{unicode-math}
+\setmathfont{Asana-Math}
+\defaultfontfeatures{Scale=MatchLowercase}
+
+
+\usepackage{color} 
+\usepackage[table,xcdraw]{xcolor} % color of column
+
+\usepackage{soulutf8}
+\usepackage{hyperref} %hyperref fot TOC
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black, % black for TOC
+	filecolor=magenta,      
+	urlcolor=blue, % blue for URL
+}
+\usepackage{pdfpages} 
+\usepackage{graphicx}
+
+\usepackage{geometry} % set margin
+ \geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=25mm,
+}
+
+\usepackage{longtable} %for multi columns alignment (eg. Name & Ins.)
+\usepackage{setspace} % for setting space between two line
+\renewcommand{\baselinestretch}{1.2}
+
+\usepackage{chemfig} %for chemistry formulae
+\usepackage{multirow} % for multi-row table
+
+
+% User defined command or settings
+\newcommand{\mychapter}[1]{
+	\chapter*{#1}
+	\addcontentsline{toc}{chapter}{#1}
+}
+\newcommand{\mysection}[1]{
+	\section*{#1}
+	\addcontentsline{toc}{section}{#1}
+}% these two commands removed the number of chapters/sections in contents
+\renewcommand{\contentsname}{目录} % change name of contents
+
+
+\title{52\textsuperscript{th} ICHO预备题中文翻译}
+\author{ICHO预备题中文翻译组}
+\date{\today} 
+\begin{document}                     
+\maketitle                              % Print title page.
+\pagenumbering{roman}                   % roman page number for toc
+\setcounter{page}{2}                    % make it start with "ii"
+\tableofcontents                        % Print table of contents
+\newpage
+
+
+
+\pagenumbering{roman}                  % Start text with arabic 1
+
+\mysection{翻译说明}
+很高兴可以为大家提供第51届IChO预备题的中文翻译稿，这也是我们自47届以来第五年提供中文翻译。该译稿基于2019年1月30日发布的原版第一版，我们在翻译过程中已尽可能仔细地审阅过试题（也修正了一些显而易见的错误），但仍可能存在一些难以发现的问题。限于时间与精力，我们不太可能会继续更新新的翻译版本。为确保题目的正确性，请读者自行访问官方网站，查看最新的官方勘误。
+
+官方网站：\href{https://icho2019.paris/en/problemes/problemes-preparatoires-icho-2019}{https://icho2019.paris/en/problemes/problemes-preparatoires-icho-2019}
+
+本译稿采用知识共享署名–非商业性使用–相同方式共享 3.0 中国大陆许可协议进行许可。全体译稿作者保留追究此协议及相关法律许可内的一切权利。\\
+
+\noindent \textbf{翻译人员名单（按拼音顺序排列）}
+
+\textbf{翻译：}
+
+
+\begin{longtable}{ p{2cm}p{12cm} } % choose suitable width for "p" column
+陈思聪&清华大学\\
+傅裕&北京大学\\
+胡康德龙&华东师范大学第二附属中学\\
+李恺杰&湖南师范大学附属中学\\
+李泽生&上海市上海中学\\
+刘立昊&北京大学\\
+祁林&上海市上海中学\\
+聂翊宸&北京大学\\
+凌心辽&江苏省苏州中学\\
+彭路遥&北京大学\\
+孙一宸&北京市十一中学\\
+张桐菡&成都市第七中学（林荫校区)
+\end{longtable}
+\textbf{图片：}
+
+\begin{longtable}{ p{2cm}p{12cm}}  % choose suitable width for "p" column
+	陈胤霖&University of Manchester\\
+	彭路遥&北京大学\\
+	王泽淳&北京大学\\
+\end{longtable}
+\textbf{校对：}
+
+\begin{longtable}{p{2cm}p{12cm} }  % choose suitable width for "p" column
+	程祥松&北京大学\\
+	李宇轩&北京大学\\
+	王泽淳&北京大学\\
+	聂翊宸&北京大学\\
+\end{longtable}
+\textbf{排版：}
+
+\begin{longtable}{p{2cm}p{12cm} }  % choose suitable width for "p" column
+	陈胤霖&University of Manchester\\
+	李宇轩&北京大学\\
+	彭路遥&北京大学\\
+	\LaTeX
+\end{longtable}
+\textit{Special thanks to Arthur for his patience and extraordinary intuition on proof reading.}
+
+\newpage
+\mysection{前言}
+我们很高兴为第51届国际化学奥林匹克竞赛提供预备题。这些试题不仅将陪同学生准备奥林匹克竞赛，同时也将展现现代和传统化学中的众多课题。这些试题应通过高中所涵盖的知识和下面列出的一些高级难点来解决（理论部分6个，实验部分2个）。
+
+本套预备题包含27个理论试题和6个实验试题。它的长度不应被视为其困难的表现：因为我们正以尽可能类似于正式竞赛试题的精神来编写这些试题。理论试题《梦回1990年》是第一部分的结尾。这个问题不应该像其他试题那样彻底研究，因为它是于1990年——上届在法国举行的奥林匹克竞赛期间向候选人提出的任务的摘录。官方答案将在2月底前发送给主管教师，且最晚于2019年6月1日之前在IChO 2019网站上发布。
+
+我们很乐意阅读并回复您对这些问题的评论，更正和疑惑。请发送电子邮件至\href{contact-icho2019@laligue.org}{contact-icho2019@laligue.org}
+
+期待在巴黎与您一起享受化学，共同创造科学！\\
+
+\hspace*{\fill} \textbf{负责预备题的科学委员会成员}\\
+
+\begin{flushright}
+Didier Bourissou, \textit{CNRS, Toulouse}\\
+Aurélien Moncomble, \textit{Université de Lille}\\
+Élise Duboué-Dijon, \textit{CNRS, Paris}\\
+Clément Guibert, \textit{Sorbonne Université, Paris}\\
+Baptiste Haddou, \textit{Lycée Darius Milhaud, Le Kremlin-Bicêtre}\\
+Hakim Lakmini, \textit{Lycée Saint Louis, Paris}\\
+\end {flushright}
+
+\section*{致谢}
+我们要感谢所有作者为编写这些问题所做的努力。他们在无数个月中的辛勤工作使得本套预备题有望帮助到参与奥林匹克竞赛的年轻化学家。我们还要感谢评审员，包括指导委员会的成员，他们的严谨和缜密极大地提高了这些问题的质量。
+\newpage
+
+\mysection{特约作者}
+{\footnotesize
+\begin{longtable}{ p{7cm}p{7cm}}  % choose suitable width for "p" column
+	Pierre Aubertin, \textit{Lycée Léonard de Vinci, Calais} &Laurent Heinrich, \textit{Lycée Pierre Corneille, Rouen}\\
+	Tahar Ayad, \textit{Chimie ParisTech, Paris}&Lucas Henry, \textit{ENS, Paris}\\
+	Alex Blokhuis, \textit{ESPCI, Paris}&Claire Kammerer, \textit{Univ. Paul Sabatier, Toulouse}\\
+	Clément Camp, \textit{CNRS, Lyon}&Dmytro Kandaskalov, \textit{Aix Marseille Université}\\
+	Jean-Marc Campagne, \textit{ENSCM, Montpellier}&Iuliia Karpenko, \textit{Université de Strasbourg}\\
+	Xavier Cattoën, \textit{CNRS, Grenoble}&Maxime Lacuve, \textit{ENSAM, Paris}\\
+	Baptiste Chappaz, \textit{Collège Les Pyramides, Évry}&Hakim Lakmini, \textit{Lycée Saint Louis, Paris}\\
+	Sylvain Clède, \textit{Lycée Stanislas, Paris}&Julien Lalande, \textit{Lycée Henri IV, Paris}\\
+	Éric Clot, \textit{CNRS, Montpellier}&Alix Lenormand, \textit{Lycée Henri Poincaré, Nancy}\\
+	Olivier Colin, \textit{UVSQ, Versailles}&Étienne Mangaud, \textit{Univ. Paul Sabatier, Toulouse}\\
+	Bénédicte Colnet, \textit{Mines ParisTech, Paris}&Jean-Daniel Marty, \textit{Univ. Paul Sabatier, Toulouse}\\
+	Antton Curutchet, \textit{ENS Lyon}&Olivier Maury, \textit{CNRS, Lyon}\\
+	Élise Duboué-Dijon, \textit{CNRS, Paris}&Bastien Mettra, \textit{IUT-Lyon1, Villeurbanne}\\
+	Alain Fruchier, \textit{ENSCM, Montpellier}&Aurélien Moncomble, \textit{Université de Lille}\\
+	Ludivine Garcia, \textit{Lycée Jean Moulin, Béziers}&Pierre-Adrien Payard, \textit{ENS, Paris}\\
+	Catherine Gautier, \textit{Lycée Algoud Laffemas, Valence}&Daniel Pla, \textit{CNRS, Toulouse}\\
+	Didier Gigmes, \textit{CNRS, Marseille}&Romain Ramozzi, \textit{Lycée Henri Poincaré, Nancy}\\
+	Emmanuel Gras, \textit{CNRS, Toulouse}&Clémence Tichaud, \textit{Lycée Jules Verne, Limours}\\
+	Laetitia Guerret, \textit{ENS Paris-Saclay, Cachan}&Vincent Robert, \textit{Université de Strasbourg}\\
+	Clément Guibert, \textit{Sorbonne Université, Paris}&Jean-Marie Swiecicki, \textit{MIT, Cambridge (USA)}\\
+	Dayana Gulevich, \textit{Moscow State University}&Guillaume Vives, \textit{Sorbonne Université, Paris}\\
+	Baptiste Haddou, \textit{Lycée D. Milhaud, Kremlin-Bicêtre}&Hanna Zhdanova, \textit{Université de Strasbourg}\\
+\end{longtable}
+}
+
+
+\mysection{其他评审员}
+略
+\newpage
+
+
+\mysection{高级难点}
+
+\noindent \textbf{理论部分}
+\begin{enumerate}
+ 	\item 热力学：平衡常数与标准反应吉布斯自由能之间的关系，热力学与电化学数据之间的关系。
+ 	\item 动力学：反应级数，半衰期，以浓度对时间的导数定义的速率，积分速率定律的使用，经典近似。
+ 	\item 基本量子化学：波函数的概念，简单分子轨道的表达，电子能级，晶体场理论。
+	 \item 光谱学：简单的红外光谱（仅鉴定化学基团），1H-NMR光谱（化学位移，积分，耦合和裂分）。
+ 	\item 聚合物：嵌段共聚物，聚合过程，多分散性，简单的尺寸排阻色谱（SEC）。
+ 	\item 立体化学：有机和无机化学中的立体异构体，有机合成中的立体选择性。\\
+\end{enumerate}
+
+\noindent \textbf{ 实验部分}
+\begin{enumerate}
+	\item 有机合成技术（沉淀物干燥，重结晶，TLC）。
+	\item 使用分光光度计（单波长测量）。\\
+\end{enumerate}
+
+\noindent 理论部分：以下高级技能或知识不会出现在考试题中：
+\begin{itemize}
+	\item 固体结构；
+	\item 关于催化的具体概念；
+	\item 关于酶的具体概念；
+	\item 特定碳水化合物化学（异头位置的反应性，命名，表示）；
+	\item 与Diels–Alder反应相关的立体化学方面（supra-supra与endo接近）；
+	\item Hückel理论；
+	\item 微积分（微分与积分）。\\
+\end{itemize}
+
+\noindent 实验部分：以下技术不会出现在竞赛中：
+
+\begin{itemize}
+	\item 使用分液漏斗并用不混溶的溶剂进行萃取；
+	\item 使用旋转蒸发仪；
+	\item 升华；
+	\item 使用熔点测定仪器；
+	\item 使用pH计。
+\end{itemize}
+\newpage
+
+\mysection{物理常数与方程}
+本套预备题中，我们假设所有水溶性物质的活度接近于它们各自的摩尔浓度。为了进一步简化公式和表达式，忽略了标准浓度$c^\ominus$ = 1 mol L\textsuperscript{−1}。\\
+
+\begin{center}
+	\begin{tabular}{>{\centering\arraybackslash}m{7cm} >{\centering\arraybackslash}m{7cm}} %to centering
+	\rowcolor{gray!10}
+	Avogadro 常数： &  $N_\mathrm A$ = 6.022 × 10\textsuperscript{23} mol\textsuperscript{−1}\\
+	普适气体常数：& $R$ = 8.314 J mol\textsuperscript{−1} K\textsuperscript{−1}  \\
+	\rowcolor{gray!10}
+	标准压力：&$p^\ominus$ = 1 bar = 105 Pa\\
+	大气压： & $p_\mathrm{atm}$ = 1 atm = 1.013 bar = 1.013 × 10\textsuperscript{5} Pa \\
+	\rowcolor{gray!10}
+	摄氏零度： & 273.15 K \\
+	Faraday 常数： & $F$ = 96485C mol\textsuperscript{−1}\\
+	\rowcolor{gray!10}
+	千瓦时： & 1 kWh = 3.6 × 10\textsuperscript{6} J \\
+	理想气体方程： & $pV=nRT$ \\
+	
+	\rowcolor{gray!10}& $G=H-TS$\\
+	\rowcolor{gray!10}& $\Delta_\mathrm rG^\ominus=-RT\ln K^\ominus$\\
+	\rowcolor{gray!10}& $ \Delta_\mathrm rG^\ominus=-nFE_\mathrm{cell}^\ominus$\\
+	\rowcolor{gray!10}\multirow{-4}{*}{ Gibbs 自由能：} 
+	& $ \Delta_\mathrm rG=\Delta_\mathrm rG^\ominus+RT\ln Q $\\
+	% to fill color in multirow
+	
+	$a$ A (aq) + $b$ B(aq) = $c$ C(aq) + $d$ D(aq)\newline 的反应商： & $Q=\frac{[\mathrm C]^c[\mathrm D]^d}{[\mathrm A]^a[\mathrm B]^b}$ \\
+	\rowcolor{gray!10}
+	Henderson–Hasselbalch 方程： & $\mathit p\mathrm H=\mathit pK_\mathrm a+\log\frac{[\mathrm A^-]}{[\mathrm{AH}]}$ \\
+	Nernst–Peterson 方程： & 22 \\
+	\rowcolor{gray!10}
+	Beer–Lambert 定律： & 12 \\
+	Clausius-Clapeyron 方程： & 22 \\
+	\rowcolor{gray!10}
+	Arrhenius 方程： & 12 \\
+	积分形式下零级、一级以及二级的速率方程 & 22 \\
+	\rowcolor{gray!10}
+	一级反应的半衰期： & 12 \\
+	数均摩尔质量$M_\mathrm n$： & 22 \\
+	\rowcolor{gray!10}
+	质均摩尔质量$M_\mathrm w$： & 12 \\
+	多分散系数$I_\mathrm p$：& 22 \\
+	\end{tabular}
+ \end{center}
+
+
+\mysection{常用数据表格}
+
+\mychapter{理论试题}
+\pagenumbering{arabic}
+
+\mysection{第1题\ 丁二烯的 \texorpdfstring{$\pi$} {TEXT}电子体系}
+
+\input{docx-to-latex/t-p1.latex}
+
+\newpage
+\mysection{第2题\  苯的定域与离域}
+
+
+
+\end{document}                          % The required last line
