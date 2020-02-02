@@ -1,6 +1,6 @@
 # 52nd IChO Chinese Version
 
-- [x] t1
+- [x] t1wp
 - [x] t2
 - [x] t3
 - [ ] t4
