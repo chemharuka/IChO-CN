@@ -1,11 +1,11 @@
 # 52nd IChO Chinese Version
 
 - [x] t1wp
-- [x] t2
-- [x] t3
-- [ ] t4
-- [ ] t5
-- [ ] t6
+- [x] t2wp
+- [x] t3wp
+- [x] t4wp
+- [x] t5
+- [x] t6
 - [ ] t7
 - [ ] t8
 - [ ] t9
