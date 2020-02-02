@@ -4,14 +4,14 @@
 - [x] t2wp
 - [x] t3wp
 - [x] t4wp
-- [x] t5
-- [x] t6
-- [ ] t7
-- [ ] t8
-- [ ] t9
-- [ ] t10
-- [ ] t11
-- [ ] t12
+- [x] t5wp
+- [x] t6wp
+- [x] t7wp
+- [x] t8wp
+- [x] t9wp
+- [x] t10wp
+- [x] t11wp
+- [x] t12wp
 - [ ] t13
 - [x] t14
 - [x] t15
