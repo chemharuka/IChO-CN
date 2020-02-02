@@ -28,9 +28,9 @@
 	filecolor=magenta,      
 	urlcolor=blue, % blue for URL
 }
-\usepackage{pdfpages} 
-\usepackage{graphicx}
-
+\usepackage{pdfpages} % for insert pdf
+\usepackage{graphicx} % for insert pic
+\usepackage{subfigure} % insert multi-pic
 \usepackage{geometry} % set margin
  \geometry{
 	a4paper,
@@ -50,7 +50,7 @@
 \usepackage{fancyhdr} %heading charpters
 \pagestyle{fancy}
 \lhead{52\textsuperscript{nd}国际化学奥林匹克预备题，伊斯坦布尔，土耳其}
-
+\rhead{}
 
 
 % User defined command or settings
@@ -351,6 +351,8 @@ ii) 除非重要，否则反应流程中的箭头不会显示反应条件，例�
 
 \mychapter{理论试题}
 \pagenumbering{arabic}
+
+\newpage
 \mysection{第1题\  土耳其的鼠尾草属植物：松香烷型二萜的全合成}
 \input{t1.tex}
 
