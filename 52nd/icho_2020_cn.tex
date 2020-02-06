@@ -67,6 +67,10 @@
 }% these two commands removed the number of chapters/sections in contents
 \renewcommand{\contentsname}{目录} % change name of contents
 
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}} %reduce list parskip
+
+
 
 \title{52\textsuperscript{th} ICHO预备题中文翻译}
 \author{ICHO预备题中文翻译组}
@@ -456,6 +460,10 @@ ii) 除非重要，否则反应流程中的箭头不会显示反应条件，例�
 
 
 \mychapter{实验试题}
+
+\newpage
+\mysection{第1题\  高分子水凝胶系统的药物输送}
+\input{p1.tex}
 
 
 \end{document}                          % The required last line
